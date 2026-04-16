@@ -48,10 +48,11 @@ public class Patient {
      * @param startTime the start of the time range, in milliseconds since UNIX
      *                  epoch
      * @param endTime   the end of the time range, in milliseconds since UNIX epoch
-     * @return a list of PatientRecord objects that fall within the specified time
-     *         range
+     * @return for now an empty array, later a list of PatientRecord objects that fall within the specified time
+     *         range 
      */
     public List<PatientRecord> getRecords(long startTime, long endTime) {
-        // TODO Implement and test this method
+        // TODO: Implement and test this method
+        return new ArrayList<>();
     }
 }
