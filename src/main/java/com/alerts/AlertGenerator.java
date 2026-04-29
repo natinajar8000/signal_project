@@ -4,17 +4,17 @@ import com.data_management.DataStorage;
 import com.data_management.Patient;
 
 /**
- * The {@code AlertGenerator} class is responsible for monitoring patient data
+ * The {@code AlertManager} class is responsible for monitoring patient data
  * and generating alerts when certain predefined conditions are met. This class
  * relies on a {@link DataStorage} instance to access patient data and evaluate
  * it against specific health criteria.
  */
-public class AlertGenerator {
+public class AlertGenerator{
 // FIX: Made the dataStorage field final 
     private final DataStorage dataStorage;
 
     /**
-     * Constructs an {@code AlertGenerator} with a specified {@code DataStorage}.
+     * Constructs an {@code AlertManager} with a specified {@code DataStorage}.
      * The {@code DataStorage} is used to retrieve patient data that this class
      * will monitor and evaluate.
      *
@@ -37,17 +37,18 @@ public class AlertGenerator {
 // FIX: Added to do comments to inform what needs to be implemented
     public void evaluateData(Patient patient) {
         // TODO: Implement the code to evaluate patient data
+        
     }
 
-    /**
+    /*
      * Triggers an alert for the monitoring system. This method can be extended to
      * notify medical staff, log the alert, or perform other actions. The method
      * currently assumes that the alert information is fully formed when passed as
      * an argument.
-     *
      * @param alert the alert object containing details about the alert condition
      */
     private void triggerAlert(Alert alert) {
         // TODO: Implement the code to trigger an alert
+
     }
 }
