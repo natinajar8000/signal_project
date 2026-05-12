@@ -7,35 +7,50 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class fileOutputStrategy implements OutputStrategy {
+// Changed the name of the class to upper-case 
+public class FileOutputStrategy implements OutputStrategy {
 
-    private String BaseDirectory;
+    // Changed BaseDirectory to baseDirectory
+    // Made the field final
+    private final String baseDirectory;
 
-    public final ConcurrentHashMap<String, String> file_map = new ConcurrentHashMap<>();
+    // Changed file_map to fileMap
+    // Made the field private
+    private final ConcurrentHashMap<String, String> fileMap = new ConcurrentHashMap<>();
 
-    public fileOutputStrategy(String baseDirectory) {
+// Changed the name to upper-case
+    public FileOutputStrategy(String baseDirectory) {
 
-        this.BaseDirectory = baseDirectory;
+        this.baseDirectory = baseDirectory;
     }
-
+  
     @Override
     public void output(int patientId, long timestamp, String label, String data) {
         try {
             // Create the directory
-            Files.createDirectories(Paths.get(BaseDirectory));
+            Files.createDirectories(Paths.get(baseDirectory));
         } catch (IOException e) {
             System.err.println("Error creating base directory: " + e.getMessage());
             return;
         }
+
         // Set the FilePath variable
-        String FilePath = file_map.computeIfAbsent(label, k -> Paths.get(BaseDirectory, label + ".txt").toString());
+        // Changed FilePath to filepath
+        // Avoided 100+ characters in one line
+        String filePath = 
+            fileMap.computeIfAbsent(label, k -> Paths.get(baseDirectory, label + ".txt").toString());
 
         // Write the data to the file
-        try (PrintWriter out = new PrintWriter(
-                Files.newBufferedWriter(Paths.get(FilePath), StandardOpenOption.CREATE, StandardOpenOption.APPEND))) {
-            out.printf("Patient ID: %d, Timestamp: %d, Label: %s, Data: %s%n", patientId, timestamp, label, data);
-        } catch (Exception e) {
-            System.err.println("Error writing to file " + FilePath + ": " + e.getMessage());
+        // Avoided 100+ characters in one line
+        try (PrintWriter out =
+            new PrintWriter(
+                Files.newBufferedWriter(
+                    Paths.get(filePath), StandardOpenOption.CREATE, StandardOpenOption.APPEND))) {
+            out.printf(
+                "Patient ID: %d, Timestamp: %d, Label: %s, Data: %s%n",
+                 patientId, timestamp, label, data);
+        } catch (IOException e) {
+            System.err.println("Error writing to file " + filePath + ": " + e.getMessage());
         }
     }
 }
