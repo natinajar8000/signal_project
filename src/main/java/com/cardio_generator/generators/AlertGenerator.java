@@ -25,7 +25,7 @@ public class AlertGenerator implements PatientDataGenerator {
      * If an alert is active, it can be resolved.
      * If no alert is active, a new alert may be triggered.
      *
-     * @param patientId the ID of the patient
+     * @param patientId      the ID of the patient
      * @param outputStrategy the strategy used to output the generated alert data
      */
     @Override
@@ -38,7 +38,7 @@ public class AlertGenerator implements PatientDataGenerator {
                     outputStrategy.output(patientId, System.currentTimeMillis(), "Alert", "resolved");
                 }
             } else {
-                // Changed double Lambda to double lmabda
+                // Changed double Lambda to double lambda
                 double lambda = 0.1; // Average rate (alerts per period), adjust based on desired frequency
                 double p = -Math.expm1(-lambda); // Probability of at least one alert in the period
                 boolean alertTriggered = randomGenerator.nextDouble() < p;
