@@ -1,7 +1,11 @@
 package com.alerts;
 
+import java.util.List;
+import java.util.ArrayList;
+
 import com.data_management.DataStorage;
 import com.data_management.Patient;
+import com.data_management.PatientRecord;
 
 /**
  * The {@code AlertGenerator} class is responsible for monitoring patient data
@@ -13,6 +17,8 @@ public class AlertGenerator {
     // added final keyword
     private final DataStorage dataStorage;
 
+    private final List<AlertRule> alertRules = new ArrayList<>();
+
     /**
      * Constructs an {@code AlertGenerator} with a specified {@code DataStorage}.
      * The {@code DataStorage} is used to retrieve patient data that this class
@@ -23,6 +29,12 @@ public class AlertGenerator {
      */
     public AlertGenerator(DataStorage dataStorage) {
         this.dataStorage = dataStorage;
+
+        alertRules.add(new BloodPressureAlertRule());
+        alertRules.add(new BloodSaturationAlertRule());
+        alertRules.add(new HypotensiveHypoxemiaAlertRule());
+        alertRules.add(new ECGAlertRule());
+        alertRules.add(new TriggeredAlertRule());
     }
 
     /**
@@ -37,7 +49,19 @@ public class AlertGenerator {
      */
     public void evaluateData(Patient patient) {
         // Implementation goes here
-        // TODO
+        long startTime = 0;
+        long endTime = System.currentTimeMillis();
+
+        List<PatientRecord> patientRecords =
+                dataStorage.getRecords(patient.getPatientId(), startTime, endTime);
+
+        for (AlertRule rule : alertRules) {
+            List<Alert> alerts = rule.check(patient, patientRecords);
+
+            for (Alert alert : alerts) {
+                triggerAlert(alert);
+            }
+        }
     }
 
     /**
@@ -49,8 +73,10 @@ public class AlertGenerator {
      * @param alert the alert object containing details about the alert condition
      */
     private void triggerAlert(Alert alert) {
-        // Implementation might involve logging the alert or notifying staff
-        // TODO
+        System.out.println("Alert: ");
+        System.out.println("Patient: " + alert.getPatientId());
+        System.out.println("Condition: " + alert.getCondition());
+        System.out.println("Time: " + alert.getTimestamp());
     }
 
 }
