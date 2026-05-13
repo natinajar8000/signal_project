@@ -1,5 +1,8 @@
 package com.alerts;
 
+import java.util.List;
+import java.util.ArrayList;
+
 import com.data_management.DataStorage;
 import com.data_management.Patient;
 
@@ -12,6 +15,8 @@ import com.data_management.Patient;
 public class AlertGenerator {
     // added final keyword
     private final DataStorage dataStorage;
+
+    private final List<AlertRule> alertRules = new ArrayList<>();
 
     /**
      * Constructs an {@code AlertGenerator} with a specified {@code DataStorage}.
@@ -37,7 +42,13 @@ public class AlertGenerator {
      */
     public void evaluateData(Patient patient) {
         // Implementation goes here
-        // TODO
+        for (AlertRule rule : alertRules) {
+            List<Alert> alerts = rule.check(patient);
+
+            for (Alert alert : alerts) {
+                triggerAlert(alert);
+            }
+        }
     }
 
     /**
@@ -49,8 +60,10 @@ public class AlertGenerator {
      * @param alert the alert object containing details about the alert condition
      */
     private void triggerAlert(Alert alert) {
-        // Implementation might involve logging the alert or notifying staff
-        // TODO
+        System.out.println("Alert: ");
+        System.out.println("Patient: " + alert.getPatientId());
+        System.out.println("Condition: " + alert.getCondition());
+        System.out.println("Time: " + alert.getTimestamp());
     }
 
 }
