@@ -45,7 +45,7 @@ public class BloodPressureAlertRule implements AlertRule {
 
             if (systolic > HIGH_SYSTOLIC_LIMIT || systolic < LOW_SYSTOLIC_LIMIT) {
                 alerts.add(new Alert(
-                        String.valueOf(patient.getPatientId()),
+                        patient.getPatientId(),
                         "Critical systolic blood pressure: " + systolic,
                         latestSystolic.getTimestamp()));
             }
@@ -56,7 +56,7 @@ public class BloodPressureAlertRule implements AlertRule {
 
             if (diastolic > HIGH_DIASTOLIC_LIMIT || diastolic < LOW_DIASTOLIC_LIMIT) {
                 alerts.add(new Alert(
-                        String.valueOf(patient.getPatientId()),
+                        patient.getPatientId(),
                         "Critical diastolic blood pressure: " + diastolic,
                         latestDiastolic.getTimestamp()));
             }
@@ -71,14 +71,14 @@ public class BloodPressureAlertRule implements AlertRule {
 
         if (hasIncreasingTrend(systolicRecords) || hasIncreasingTrend(diastolicRecords)) {
             alerts.add(new Alert(
-                    String.valueOf(patient.getPatientId()),
+                    patient.getPatientId(),
                     "Blood pressure increasing trend detected",
                     System.currentTimeMillis()));
         }
 
         if (hasDecreasingTrend(systolicRecords) || hasDecreasingTrend(diastolicRecords)) {
             alerts.add(new Alert(
-                    String.valueOf(patient.getPatientId()),
+                    patient.getPatientId(),
                     "Blood pressure decreasing trend detected",
                     System.currentTimeMillis()));
         }

@@ -25,7 +25,7 @@ public class TriggeredAlertRule implements AlertRule {
 
         if (latestAlert.getMeasurementValue() == TRIGGERED_VALUE) {
             alerts.add(new Alert(
-                    String.valueOf(patient.getPatientId()),
+                    patient.getPatientId(),
                     "Alert triggered at: ",
                     latestAlert.getTimestamp()));
         }

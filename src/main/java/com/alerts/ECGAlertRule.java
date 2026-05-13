@@ -39,7 +39,7 @@ public class ECGAlertRule implements AlertRule {
                 && latestValue > average + MINIMUM_PEAK_DIFFERENCE) {
 
             alerts.add(new Alert(
-                    String.valueOf(patient.getPatientId()),
+                    patient.getPatientId(),
                     "Abnormal ECG peak detected: "
                             + latestRecord.getMeasurementValue(),
                     latestRecord.getTimestamp()));

@@ -26,7 +26,7 @@ public class BloodSaturationAlertRule implements AlertRule {
                 && latestSaturation.getMeasurementValue() < LOW_SATURATION_LIMIT) {
 
             alerts.add(new Alert(
-                    String.valueOf(patient.getPatientId()),
+                    patient.getPatientId(),
                     "Low blood oxygen saturation: "
                             + latestSaturation.getMeasurementValue() + "%",
                     latestSaturation.getTimestamp()));
@@ -34,7 +34,7 @@ public class BloodSaturationAlertRule implements AlertRule {
 
         if (hasRapidDropWithinTenMinutes(saturationRecords)) {
             alerts.add(new Alert(
-                    String.valueOf(patient.getPatientId()),
+                    patient.getPatientId(),
                     "Rapid oxygen saturation drop detected",
                     System.currentTimeMillis()));
         }

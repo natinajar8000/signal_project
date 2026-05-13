@@ -33,7 +33,7 @@ public class HypotensiveHypoxemiaAlertRule implements AlertRule {
 
         if (systolic < LOW_SYSTOLIC_LIMIT && saturation < LOW_SATURATION_LIMIT) {
             alerts.add(new Alert(
-                    String.valueOf(patient.getPatientId()),
+                    patient.getPatientId(),
                     "Hypotensive Hypoxemia Alert",
                     Math.max(
                             latestSystolic.getTimestamp(),
