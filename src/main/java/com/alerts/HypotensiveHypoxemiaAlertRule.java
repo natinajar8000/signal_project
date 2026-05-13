@@ -16,10 +16,10 @@ public class HypotensiveHypoxemiaAlertRule implements AlertRule {
         List<Alert> alerts = new ArrayList<>();
 
         List<PatientRecord> systolicRecords =
-                AlertDataSort.getRecordsByType(patient, "SystolicPressure");
+                AlertDataSort.getRecordsByType(patientRecords, "SystolicPressure");
 
         List<PatientRecord> saturationRecords =
-                AlertDataSort.getRecordsByType(patient, "Saturation");
+                AlertDataSort.getRecordsByType(patientRecords, "Saturation");
 
         PatientRecord latestSystolic = AlertDataSort.getLatestRecord(systolicRecords);
         PatientRecord latestSaturation = AlertDataSort.getLatestRecord(saturationRecords);

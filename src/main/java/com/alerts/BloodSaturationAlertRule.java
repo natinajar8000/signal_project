@@ -18,7 +18,7 @@ public class BloodSaturationAlertRule implements AlertRule {
         List<Alert> alerts = new ArrayList<>();
 
         List<PatientRecord> saturationRecords =
-                AlertDataSort.getRecordsByType(patient, "Saturation");
+                AlertDataSort.getRecordsByType(patientRecords, "Saturation");
 
         PatientRecord latestSaturation = AlertDataSort.getLatestRecord(saturationRecords);
 

@@ -20,10 +20,10 @@ public class BloodPressureAlertRule implements AlertRule {
         List<Alert> alerts = new ArrayList<>();
 
         List<PatientRecord> systolicRecords =
-                AlertDataSort.getRecordsByType(patient, "SystolicPressure");
+                AlertDataSort.getRecordsByType(patientRecords, "SystolicPressure");
 
         List<PatientRecord> diastolicRecords =
-                AlertDataSort.getRecordsByType(patient, "DiastolicPressure");
+                AlertDataSort.getRecordsByType(patientRecords, "DiastolicPressure");
 
         checkCriticalThresholds(patient, systolicRecords, diastolicRecords, alerts);
         checkTrends(patient, systolicRecords, diastolicRecords, alerts);

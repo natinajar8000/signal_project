@@ -18,7 +18,7 @@ public class ECGAlertRule implements AlertRule {
         List<Alert> alerts = new ArrayList<>();
 
         List<PatientRecord> ecgRecords =
-                AlertDataSort.getRecordsByType(patient, "ECG");
+                AlertDataSort.getRecordsByType(patientRecords, "ECG");
 
         if (ecgRecords.size() < WINDOW_SIZE) {
             return alerts;

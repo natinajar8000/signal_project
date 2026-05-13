@@ -1,6 +1,5 @@
 package com.alerts;
 
-import com.data_management.Patient;
 import com.data_management.PatientRecord;
 
 import java.util.ArrayList;
@@ -9,13 +8,16 @@ import java.util.List;
 
 public final class AlertDataSort {
 
-    private AlertDataSort() {}
+    private AlertDataSort() {
+    }
 
-    public static List<PatientRecord> getRecordsByType(Patient patient, String recordType) {
-        List<PatientRecord> allRecords = patient.getRecords(0, System.currentTimeMillis());
+    public static List<PatientRecord> getRecordsByType(
+            List<PatientRecord> records,
+            String recordType) {
+
         List<PatientRecord> matchingRecords = new ArrayList<>();
 
-        for (PatientRecord record : allRecords) {
+        for (PatientRecord record : records) {
             if (record.getRecordType().equals(recordType)) {
                 matchingRecords.add(record);
             }

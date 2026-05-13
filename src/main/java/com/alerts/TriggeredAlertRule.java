@@ -15,7 +15,7 @@ public class TriggeredAlertRule implements AlertRule {
         List<Alert> alerts = new ArrayList<>();
 
         List<PatientRecord> alertRecords =
-                AlertDataSort.getRecordsByType(patient, "Alert");
+                AlertDataSort.getRecordsByType(patientRecords, "Alert");
 
         PatientRecord latestAlert = AlertDataSort.getLatestRecord(alertRecords);
 
