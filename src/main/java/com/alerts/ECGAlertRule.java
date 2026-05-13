@@ -14,7 +14,7 @@ public class ECGAlertRule implements AlertRule {
     private static final double MINIMUM_PEAK_DIFFERENCE = 0.5;
 
     @Override
-    public List<Alert> check(Patient patient) {
+    public List<Alert> check(Patient patient, List<PatientRecord> patientRecords) {
         List<Alert> alerts = new ArrayList<>();
 
         List<PatientRecord> ecgRecords =

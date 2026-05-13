@@ -12,7 +12,7 @@ public class HypotensiveHypoxemiaAlertRule implements AlertRule {
     private static final double LOW_SATURATION_LIMIT = 92;
 
     @Override
-    public List<Alert> check(Patient patient) {
+    public List<Alert> check(Patient patient, List<PatientRecord> patientRecords) {
         List<Alert> alerts = new ArrayList<>();
 
         List<PatientRecord> systolicRecords =

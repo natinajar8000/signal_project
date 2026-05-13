@@ -16,7 +16,7 @@ public class BloodPressureAlertRule implements AlertRule {
     private static final double TREND_CHANGE_LIMIT = 10;
 
     @Override
-    public List<Alert> check(Patient patient) {
+    public List<Alert> check(Patient patient, List<PatientRecord> patientRecords) {
         List<Alert> alerts = new ArrayList<>();
 
         List<PatientRecord> systolicRecords =

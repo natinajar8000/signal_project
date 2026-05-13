@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import com.data_management.DataStorage;
 import com.data_management.Patient;
+import com.data_management.PatientRecord;
 
 /**
  * The {@code AlertGenerator} class is responsible for monitoring patient data
@@ -28,6 +29,12 @@ public class AlertGenerator {
      */
     public AlertGenerator(DataStorage dataStorage) {
         this.dataStorage = dataStorage;
+
+        alertRules.add(new BloodPressureAlertRule());
+        alertRules.add(new BloodSaturationAlertRule());
+        alertRules.add(new HypotensiveHypoxemiaAlertRule());
+        alertRules.add(new ECGAlertRule());
+        alertRules.add(new TriggeredAlertRule());
     }
 
     /**
@@ -42,8 +49,14 @@ public class AlertGenerator {
      */
     public void evaluateData(Patient patient) {
         // Implementation goes here
+        long startTime = 0;
+        long endTime = System.currentTimeMillis();
+
+        List<PatientRecord> patientRecords =
+                dataStorage.getRecords(patient.getPatientId(), startTime, endTime);
+
         for (AlertRule rule : alertRules) {
-            List<Alert> alerts = rule.check(patient);
+            List<Alert> alerts = rule.check(patient, patientRecords);
 
             for (Alert alert : alerts) {
                 triggerAlert(alert);
