@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-public class BloodPressureStrategy implements AlertStrategy {
+public class BloodPressureAlertStrategy implements AlertStrategy {
 
     private static final double HIGH_SYSTOLIC_LIMIT = 180;
     private static final double LOW_SYSTOLIC_LIMIT = 90;
@@ -17,7 +17,7 @@ public class BloodPressureStrategy implements AlertStrategy {
 
     private final AlertFactory alertFactory;
 
-    public BloodPressureStrategy() {
+    public BloodPressureAlertStrategy() {
         this.alertFactory = new BloodPressureAlertFactory();
     }
 

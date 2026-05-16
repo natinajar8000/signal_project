@@ -17,7 +17,7 @@ public class AlertGenerator {
     // added final keyword
     private final DataStorage dataStorage;
 
-    private final List<AlertRule> alertRules = new ArrayList<>();
+    private final List<AlertStrategy> alertStrategy = new ArrayList<>();
 
     /**
      * Constructs an {@code AlertGenerator} with a specified {@code DataStorage}.
@@ -30,11 +30,11 @@ public class AlertGenerator {
     public AlertGenerator(DataStorage dataStorage) {
         this.dataStorage = dataStorage;
 
-        alertRules.add(new BloodPressureAlertRule());
-        alertRules.add(new BloodSaturationAlertRule());
-        alertRules.add(new HypotensiveHypoxemiaAlertRule());
-        alertRules.add(new ECGAlertRule());
-        alertRules.add(new TriggeredAlertRule());
+        alertStrategy.add(new BloodPressureAlertStrategy());
+        alertStrategy.add(new BloodOxygenAlertStrategy());
+        alertStrategy.add(new HypotensiveHypoxemiaAlertStrategy());
+        alertStrategy.add(new ECGAlertStrategy());
+        alertStrategy.add(new TriggeredAlertStrategy());
     }
 
     /**
@@ -55,8 +55,8 @@ public class AlertGenerator {
         List<PatientRecord> patientRecords =
                 dataStorage.getRecords(patient.getPatientId(), startTime, endTime);
 
-        for (AlertRule rule : alertRules) {
-            List<Alert> alerts = rule.check(patient, patientRecords);
+        for (AlertStrategy strategy : alertStrategy) {
+            List<Alert> alerts = strategy.check(patient, patientRecords);
 
             for (Alert alert : alerts) {
                 triggerAlert(alert);

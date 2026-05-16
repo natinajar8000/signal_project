@@ -6,14 +6,14 @@ import com.data_management.PatientRecord;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HypotensiveHypoxemiaStrategy implements AlertStrategy {
+public class HypotensiveHypoxemiaAlertStrategy implements AlertStrategy {
 
     private static final double LOW_SYSTOLIC_LIMIT = 90;
     private static final double LOW_SATURATION_LIMIT = 92;
 
     private final AlertFactory alertFactory;
 
-    public HypotensiveHypoxemiaStrategy() {
+    public HypotensiveHypoxemiaAlertStrategy() {
         this.alertFactory = new HypotensiveHypoxemiaAlertFactory();
     }
 
