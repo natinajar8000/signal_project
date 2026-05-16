@@ -32,10 +32,26 @@ import java.util.ArrayList;
 
 public class HealthDataSimulator {
 
+    private static HealthDataSimulator instance;
     private static int patientCount = 50; // Default number of patients
     private static ScheduledExecutorService scheduler;
     private static OutputStrategy outputStrategy = new ConsoleOutputStrategy(); // Default output strategy
     private static final Random random = new Random();
+
+    private HealthDataSimulator() {
+    }
+
+    public static synchronized HealthDataSimulator getInstance() {
+        if (instance == null) {
+            instance = new HealthDataSimulator();
+        }
+        return instance;
+    }
+
+    public static void main(String[] args) throws IOException {
+        HealthDataSimulator simulator = HealthDataSimulator.getInstance();
+        simulator.start(args);
+    }
 
     /**
      * simulator entry point, sets up environment and starts scheduling
@@ -43,7 +59,7 @@ public class HealthDataSimulator {
      * @param args CLI arguments
      * @throws IOException if file system access fails
      */
-    public static void main(String[] args) throws IOException {
+    public static void start(String[] args) throws IOException {
 
         parseArguments(args);
 
