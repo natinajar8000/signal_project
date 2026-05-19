@@ -1,4 +1,4 @@
-package com.alerts;
+package com.alerts.alert;
 
 public class BasicAlert implements Alert {
     private int patientId;

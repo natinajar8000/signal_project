@@ -1,5 +1,9 @@
-package com.alerts;
+package com.alerts.strategy;
 
+import com.alerts.alert.Alert;
+import com.alerts.factory.AlertFactory;
+import com.alerts.factory.BloodOxygenAlertFactory;
+import com.alerts.utilities.AlertDataSort;
 import com.data_management.Patient;
 import com.data_management.PatientRecord;
 

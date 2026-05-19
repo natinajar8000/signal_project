@@ -4,8 +4,8 @@ import com.data_management.Patient;
 import com.data_management.PatientRecord;
 import org.junit.jupiter.api.Test;
 
-import com.alerts.Alert;
-import com.alerts.HypotensiveHypoxemiaAlertStrategy;
+import com.alerts.alert.Alert;
+import com.alerts.strategy.HypotensiveHypoxemiaAlertStrategy;
 
 import java.util.ArrayList;
 import java.util.List;

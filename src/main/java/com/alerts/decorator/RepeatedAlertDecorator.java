@@ -1,4 +1,6 @@
-package com.alerts;
+package com.alerts.decorator;
+
+import com.alerts.alert.Alert;
 
 public class RepeatedAlertDecorator extends AlertDecorator {
     private int checkIntervalSeconds;

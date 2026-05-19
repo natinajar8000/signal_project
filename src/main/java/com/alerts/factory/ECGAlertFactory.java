@@ -1,6 +1,9 @@
-package com.alerts;
+package com.alerts.factory;
 
-public class BloodOxygenAlertFactory extends AlertFactory{
+import com.alerts.alert.Alert;
+import com.alerts.alert.BasicAlert;
+
+public class ECGAlertFactory extends AlertFactory {
 
     @Override
     public Alert createAlert(int patientId, String condition, long timestamp) {

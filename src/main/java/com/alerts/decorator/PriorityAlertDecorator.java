@@ -1,4 +1,6 @@
-package com.alerts;
+package com.alerts.decorator;
+
+import com.alerts.alert.Alert;
 
 public class PriorityAlertDecorator extends AlertDecorator {
     private String priorityLevel;

@@ -1,8 +1,8 @@
 package alerts;
 
+import com.alerts.utilities.AlertDataSort;
 import com.data_management.PatientRecord;
 import org.junit.jupiter.api.Test;
-import com.alerts.AlertDataSort;
 
 import java.util.List;
 import java.util.ArrayList;

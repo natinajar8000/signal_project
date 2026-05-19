@@ -1,14 +1,15 @@
 package alerts;
 
 import org.junit.jupiter.api.Test;
-import com.alerts.AlertFactory;
-import com.alerts.Alert;
-import com.alerts.BloodOxygenAlertFactory;
-import com.alerts.BloodPressureAlertFactory;
-import com.alerts.ECGAlertFactory;
-import com.alerts.HypotensiveHypoxemiaAlertFactory;
-import com.alerts.TriggeredAlertFactory;
-import com.alerts.BasicAlert;
+
+import com.alerts.factory.AlertFactory;
+import com.alerts.factory.BloodOxygenAlertFactory;
+import com.alerts.factory.BloodPressureAlertFactory;
+import com.alerts.factory.ECGAlertFactory;
+import com.alerts.factory.HypotensiveHypoxemiaAlertFactory;
+import com.alerts.factory.TriggeredAlertFactory;
+import com.alerts.alert.Alert;
+import com.alerts.alert.BasicAlert;
 
 import static org.junit.jupiter.api.Assertions.*;
 

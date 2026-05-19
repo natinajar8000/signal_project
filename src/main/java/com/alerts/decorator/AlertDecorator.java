@@ -1,4 +1,6 @@
-package com.alerts;
+package com.alerts.decorator;
+
+import com.alerts.alert.Alert;
 
 public abstract class AlertDecorator implements Alert {
     protected Alert decoratedAlert;

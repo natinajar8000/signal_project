@@ -3,6 +3,13 @@ package com.alerts;
 import java.util.List;
 import java.util.ArrayList;
 
+import com.alerts.alert.Alert;
+import com.alerts.strategy.AlertStrategy;
+import com.alerts.strategy.BloodOxygenAlertStrategy;
+import com.alerts.strategy.BloodPressureAlertStrategy;
+import com.alerts.strategy.ECGAlertStrategy;
+import com.alerts.strategy.HypotensiveHypoxemiaAlertStrategy;
+import com.alerts.strategy.TriggeredAlertStrategy;
 import com.data_management.DataStorage;
 import com.data_management.Patient;
 import com.data_management.PatientRecord;

@@ -2,7 +2,12 @@ package data_management;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
-import com.alerts.*; // Tu są Alert, AlertRule, AlertGenerator, AlertDataSort
+import com.alerts.AlertGenerator; 
+import com.alerts.alert.Alert;
+import com.alerts.alert.BasicAlert;
+import com.alerts.decorator.PriorityAlertDecorator;
+import com.alerts.decorator.RepeatedAlertDecorator;
+import com.alerts.utilities.AlertDataSort;
 import com.data_management.DataStorage;
 import com.data_management.Patient;
 import com.data_management.PatientRecord;
