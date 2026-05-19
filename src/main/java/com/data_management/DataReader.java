@@ -20,7 +20,7 @@ public interface DataReader {
      * 
      * @throws Exception if connection fails
      */
-    void connect(String serverUri, DataStorage storage) throws Exception;
+    void connect(String serverUri, DataStorage storage) throws IOException;
 
     void disconnect() throws Exception;
 }

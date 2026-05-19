@@ -32,7 +32,7 @@ public class FileDataReader implements DataReader {
     }
 
     @Override
-    public void disconnect() throws Exception {
+    public void disconnect() throws IOException {
     }
 
     /**
