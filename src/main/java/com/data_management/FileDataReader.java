@@ -20,7 +20,7 @@ public class FileDataReader implements DataReader {
     }
 
     @Override
-    public void readData(DataStorage dataStorage) throws IOException {
+    public void connect(String serverUri, DataStorage dataStorage) throws IOException {
         Path path = Paths.get(inputDirectory);
 
         // Walk through the directory to find all .txt files
@@ -29,6 +29,10 @@ public class FileDataReader implements DataReader {
                     .filter(p -> p.toString().endsWith(".txt"))
                     .forEach(p -> parseFile(p, dataStorage));
         }
+    }
+
+    @Override
+    public void disconnect() throws Exception {
     }
 
     /**
