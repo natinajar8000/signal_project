@@ -2,6 +2,7 @@ package com.alerts.decorator;
 
 import com.alerts.alert.Alert;
 
+// An abstract base class for alert decorators.
 public abstract class AlertDecorator implements Alert {
     protected Alert decoratedAlert;
 
