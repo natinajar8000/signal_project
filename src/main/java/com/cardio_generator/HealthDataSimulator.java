@@ -49,8 +49,7 @@ public class HealthDataSimulator {
     }
 
     public static void main(String[] args) throws IOException {
-        HealthDataSimulator simulator = HealthDataSimulator.getInstance();
-        simulator.start(args);
+        HealthDataSimulator.start(args);
     }
 
     /**
