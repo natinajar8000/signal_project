@@ -17,10 +17,18 @@ public class HypotensiveHypoxemiaAlertStrategy implements AlertStrategy {
 
     private final AlertFactory alertFactory;
 
+    // Constructor that initializes the alert factory
     public HypotensiveHypoxemiaAlertStrategy() {
         this.alertFactory = new HypotensiveHypoxemiaAlertFactory();
     }
 
+    /**
+     * Checks the patient's blood pressure and oxygen saturation data to generate a hypotensive hypoxemia alert
+     * if the systolic pressure and oxygen saturation are both below their thresholds
+     * @param patient the patient to check
+     * @param patientRecords the list of patient records to analyze
+     * @return a list of generated alerts 
+     */
     @Override
     public List<Alert> check(Patient patient, List<PatientRecord> patientRecords) {
         List<Alert> alerts = new ArrayList<>();

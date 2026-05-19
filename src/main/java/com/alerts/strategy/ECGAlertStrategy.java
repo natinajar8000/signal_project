@@ -19,10 +19,17 @@ public class ECGAlertStrategy implements AlertStrategy {
 
     private final AlertFactory alertFactory;
 
+    // Constructor that initializes the alert factory
     public ECGAlertStrategy() {
         this.alertFactory = new ECGAlertFactory();
     }
 
+    /**
+     * Checks the patient's ECG values and generates alerts
+     * @param patient the patient to check
+     * @param patientRecords the list of patient records
+     * @return the list of alerts generated
+     */
     @Override
     public List<Alert> check(Patient patient, List<PatientRecord> patientRecords) {
         List<Alert> alerts = new ArrayList<>();
@@ -58,6 +65,11 @@ public class ECGAlertStrategy implements AlertStrategy {
         return alerts;
     }
 
+    /**
+     * Calculates the average absolute value of the given records
+     * @param records the list of records to calculate the average for
+     * @return the average absolute value
+     */
     private double calculateAverageAbsoluteValue(List<PatientRecord> records) {
         double sum = 0;
 

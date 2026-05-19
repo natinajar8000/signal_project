@@ -6,8 +6,8 @@ import java.net.URISyntaxException;
 import org.java_websocket.handshake.ServerHandshake;
 
 /**
- * WebSocket client that recieves real-time patient measurements
- * from the simulator and stores them in DataStorage.
+ * WebSocket client that recieves patient measurements
+ * from the simulator and stores them in DataStorage
  */
 public class WebSocketClient extends org.java_websocket.client.WebSocketClient {
 
@@ -17,7 +17,7 @@ public class WebSocketClient extends org.java_websocket.client.WebSocketClient {
     private boolean connected;
 
     /**
-     * Creates a client connected to the WebSocket's server URI.
+     * Creates a client connected to the WebSocket server URI
      *
      * @param uri   WebSocket server URI
      * @param dataStorage storage used to save parsed patient data
@@ -44,12 +44,20 @@ public class WebSocketClient extends org.java_websocket.client.WebSocketClient {
         this(new URI(uri), dataStorage);
     }
 
+    /**
+     * Used whe the WebSocket connection is opened
+     * @param handshake handshake information
+     */
     @Override
     public void onOpen(ServerHandshake handshake) {
         connected = true;
         System.out.println("Connected to WebSocket server: " + getURI());
     }
 
+    /**
+     * Called when a message appears over the WebSocket connection
+     * @param message the received message
+     */
     @Override
     public void onMessage(String message) {
         try {
@@ -61,6 +69,12 @@ public class WebSocketClient extends org.java_websocket.client.WebSocketClient {
         }
     }
 
+    /**
+     * Called whe the WebSocket connection is closed
+     * @param code   
+     * @param reason the close reason
+     * @param remote whether the close was initiated by remote endpoint
+     */
     @Override
     public void onClose(int code, String reason, boolean remote) {
         connected = false;
@@ -75,7 +89,7 @@ public class WebSocketClient extends org.java_websocket.client.WebSocketClient {
     }
 
     /**
-     * Parses a message and stores it in DataStorage.
+     * Parses a message and stores it in DataStorage
      * 
      * @param message raw WebSocket message
      */
@@ -89,7 +103,7 @@ public class WebSocketClient extends org.java_websocket.client.WebSocketClient {
     }
 
     /**
-     * Converts a WebSocket message into an actual patient measurement.
+     * Converts a WebSocket message into an actual patient measurement
      *
      * @param message raw message in patientId,timestamp,label,data format
      * @return parsed patient measurement

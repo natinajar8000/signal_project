@@ -11,6 +11,12 @@ public final class AlertDataSort {
     private AlertDataSort() {
     }
 
+    /**
+     * Filters the patient records by record type and sorts them by timestamp
+     * @param records
+     * @param recordType
+     * @return
+     */
     public static List<PatientRecord> getRecordsByType(
             List<PatientRecord> records,
             String recordType) {
@@ -27,6 +33,11 @@ public final class AlertDataSort {
         return matchingRecords;
     }
 
+    /**
+     * Gets the latest patient record from a list of records
+     * @param records 
+     * @return the latest patient record or null if the list is empty
+     */
     public static PatientRecord getLatestRecord(List<PatientRecord> records) {
         if (records.isEmpty()) {
             return null;
