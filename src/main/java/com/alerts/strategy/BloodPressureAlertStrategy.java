@@ -21,10 +21,17 @@ public class BloodPressureAlertStrategy implements AlertStrategy {
 
     private final AlertFactory alertFactory;
 
+    // Constructor that initializes the alert factory
     public BloodPressureAlertStrategy() {
         this.alertFactory = new BloodPressureAlertFactory();
     }
 
+    /**
+     * Checks the patient's blood pressure data and generates alerts
+     * @param patient patient to check
+     * @param patientRecords the list of patient records to analyze
+     * @return a list of generated alerts
+     */
     @Override
     public List<Alert> check(Patient patient, List<PatientRecord> patientRecords) {
         List<Alert> alerts = new ArrayList<>();
@@ -41,6 +48,13 @@ public class BloodPressureAlertStrategy implements AlertStrategy {
         return alerts;
     }
 
+    /**
+     * Checks for critical thresholds 
+     * @param patient the patient to check 
+     * @param systolicRecords the list of systolic pressure records
+     * @param diastolicRecords the list of diastolic pressure records
+     * @param alerts the list of alerts to add to if critical thresholds are detected
+     */
     private void checkCriticalThresholds(
             Patient patient,
             List<PatientRecord> systolicRecords,
@@ -73,6 +87,13 @@ public class BloodPressureAlertStrategy implements AlertStrategy {
         }
     }
 
+    /**
+     * Checks for increasing or decreasing trends in blood pressure
+     * @param patient the patient to check
+     * @param systolicRecords the list of systolic pressure records
+     * @param diastolicRecords the list of diastolic pressure records
+     * @param alerts the list of alerts to add to if trends are detected
+     */
     private void checkTrends(
             Patient patient,
             List<PatientRecord> systolicRecords,
@@ -94,6 +115,11 @@ public class BloodPressureAlertStrategy implements AlertStrategy {
         }
     }
 
+    /**
+     * Checks for an increasing trend in the given records
+     * @param records the list of records to check
+     * @return true if there is an increasing trend, otherwise false
+     */
     private boolean hasIncreasingTrend(List<PatientRecord> records) {
         if (records.size() < 3) {
             return false;
@@ -109,6 +135,11 @@ public class BloodPressureAlertStrategy implements AlertStrategy {
                 && third.getMeasurementValue() - second.getMeasurementValue() > TREND_CHANGE_LIMIT;
     }
 
+    /**
+     * Checks for a decreasing trend in the records
+     * @param records the list of records to check
+     * @return true if there is a decreasing trend otherwise false
+     */
     private boolean hasDecreasingTrend(List<PatientRecord> records) {
         if (records.size() < 3) {
             return false;

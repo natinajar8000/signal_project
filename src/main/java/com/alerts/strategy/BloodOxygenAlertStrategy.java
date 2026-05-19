@@ -19,10 +19,17 @@ public class BloodOxygenAlertStrategy implements AlertStrategy {
 
     private final AlertFactory alertFactory;
 
+    // Constructor that initializes the alert factory
     public BloodOxygenAlertStrategy() {
         this.alertFactory = new BloodOxygenAlertFactory();
     }
 
+    /**
+     * Checks the patient's blood oxygen data and generates alerts
+     * @param patient patient to check
+     * @param patientRecords the list of patient records to analyze
+     * @return a list of generated alerts
+     */
     @Override
     public List<Alert> check(Patient patient, List<PatientRecord> patientRecords) {
         List<Alert> alerts = new ArrayList<>();
@@ -52,6 +59,11 @@ public class BloodOxygenAlertStrategy implements AlertStrategy {
         return alerts;
     }
 
+    /**
+     * CHecks for rapid drops
+     * @param records the list of saturation records
+     * @return true if there is a rapid drop within 10 minutes, otherwise false
+     */
     private boolean hasRapidDropWithinTenMinutes(List<PatientRecord> records) {
         if (records.size() < 2) {
             return false;
