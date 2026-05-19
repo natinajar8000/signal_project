@@ -2,7 +2,7 @@ package data_management;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
-import com.alerts.AlertGenerator; 
+import com.alerts.AlertGenerator;
 import com.alerts.alert.Alert;
 import com.alerts.alert.BasicAlert;
 import com.alerts.decorator.PriorityAlertDecorator;
@@ -15,12 +15,9 @@ import com.data_management.PatientRecord;
 import java.util.List;
 import java.util.ArrayList;
 
-// import com.alerts.*;
-// import java.util.List;
-// import java.util.ArrayList;
-
 class CHMSTest {
 
+    /** Tests that the patient correctly filters records based on a time range. */
     @Test
     void testPatientGetRecords() {
         Patient patient = new Patient(10);
@@ -34,6 +31,10 @@ class CHMSTest {
         assertEquals(90.0, records.get(0).getMeasurementValue());
     }
 
+    /**
+     * Tests that records are correctly filtered by measurement type using the
+     * utility class.
+     */
     @Test
     void testAlertDataSort() {
         List<PatientRecord> records = new ArrayList<>();
@@ -46,27 +47,10 @@ class CHMSTest {
         assertEquals(2000L, sorted.get(0).getTimestamp());
     }
 
-    // @Test
-    // void testMockAlertRule() {
-    // AlertRule mockRule = (patient, records) -> {
-    // List<Alert> alerts = new ArrayList<>();
-    // if (!records.isEmpty()) {
-    // alerts.add(new BasicAlert(patient.getPatientId(), "Test Condition",
-    // System.currentTimeMillis()));
-    // }
-    // return alerts;
-    // };
-
-    // Patient patient = new Patient(1);
-    // List<PatientRecord> records = new ArrayList<>();
-    // records.add(new PatientRecord(1, 100.0, "TestType", 1000L));
-
-    // List<Alert> triggeredAlerts = mockRule.check(patient, records);
-
-    // assertEquals(1, triggeredAlerts.size());
-    // assertEquals("Test Condition", triggeredAlerts.get(0).getCondition());
-    // }
-
+    /**
+     * Tests that the AlertGenerator handles patients with no data without throwing
+     * exceptions.
+     */
     @Test
     void testAlertGeneratorWithEmptyData() {
         DataStorage storage = DataStorage.getInstance();
@@ -76,6 +60,10 @@ class CHMSTest {
         assertDoesNotThrow(() -> generator.evaluateData(patient));
     }
 
+    /**
+     * Verifies that DataStorage correctly maintains a single instance as a
+     * Singleton.
+     */
     @Test
     void testDataStorageSingleton() {
         DataStorage instance1 = DataStorage.getInstance();
@@ -84,6 +72,10 @@ class CHMSTest {
         assertSame(instance1, instance2);
     }
 
+    /**
+     * Tests the interaction and stacking logic of Priority and Repeated alert
+     * decorators.
+     */
     @Test
     void testAlertDecorators() {
         Alert alert = new BasicAlert(1, "Low Oxygen", 1000L);
@@ -95,6 +87,10 @@ class CHMSTest {
         assertEquals("[URGENT] Low Oxygen [repeated every 10s]", fullyDecoratedAlert.getCondition());
     }
 
+    /**
+     * Validates that BasicAlert correctly stores and returns its fundamental data
+     * fields.
+     */
     @Test
     void testBasicAlertCreationAndGetters() {
         int expectedPatientId = 99;
@@ -108,6 +104,9 @@ class CHMSTest {
         assertEquals(expectedTimestamp, alert.getTimestamp());
     }
 
+    /**
+     * Tests that the PriorityAlertDecorator correctly updates the condition string.
+     */
     @Test
     void testPriorityAlertDecoratorModifiesCondition() {
         Alert basicAlert = new BasicAlert(1, "SPO2 Drop", 1000L);
@@ -116,6 +115,10 @@ class CHMSTest {
         assertEquals("[URGENT] SPO2 Drop", priorityAlert.getCondition());
     }
 
+    /**
+     * Ensures that decorators preserve the original alert's patient ID and
+     * timestamp.
+     */
     @Test
     void testPriorityAlertDecoratorPreservesBasicData() {
         int patientId = 42;
@@ -127,6 +130,10 @@ class CHMSTest {
         assertEquals(timestamp, priorityAlert.getTimestamp());
     }
 
+    /**
+     * Verifies that the PriorityAlertDecorator standardizes priority strings to
+     * uppercase.
+     */
     @Test
     void testPriorityAlertDecoratorHandlesCaseInsensitivity() {
         Alert basicAlert = new BasicAlert(5, "Fever", 2000L);
@@ -135,6 +142,9 @@ class CHMSTest {
         assertEquals("[WARNING] Fever", priorityAlert.getCondition());
     }
 
+    /**
+     * Checks that multiple layers of priority decorators can be stacked correctly.
+     */
     @Test
     void testMultiplePriorityDecoratorsStacking() {
         Alert alert = new BasicAlert(12, "Blood Pressure Spike", 3000L);
