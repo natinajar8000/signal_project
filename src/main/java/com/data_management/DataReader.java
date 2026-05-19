@@ -22,5 +22,5 @@ public interface DataReader {
      */
     void connect(String serverUri, DataStorage storage) throws IOException;
 
-    void disconnect() throws Exception;
+    void disconnect() throws IOException;
 }
