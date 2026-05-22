@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4 Safari/605.1.15">
+  <diagram id="Step_5_-_Data_Storage_System" name="Step 5 - Data Storage System">
+    <mxGraphModel dx="1245" dy="1559" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <mxCell id="DS_01" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="DataStorage" vertex="1">
+          <mxGeometry height="150" width="300" x="435" y="-550" as="geometry" />
+        </mxCell>
+        <mxCell id="DS_02" parent="DS_01" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="- storageMap: Map&lt;Integer, List&lt;PatientRecord&gt;&gt;&#10;- accessController: AccessController&#10;- retentionManager: RetentionManager" vertex="1">
+          <mxGeometry height="60" width="300" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="DS_03" parent="DS_01" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="300" y="86" as="geometry" />
+        </mxCell>
+        <mxCell id="DS_04" parent="DS_01" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ saveRecord(record: PatientRecord): void&#10;+ getRecords(patientId: int, start: long, end: long): List" vertex="1">
+          <mxGeometry height="50" width="300" y="94" as="geometry" />
+        </mxCell>
+
+        <mxCell id="PR_01" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="PatientRecord" vertex="1">
+          <mxGeometry height="150" width="220" x="120" y="-550" as="geometry" />
+        </mxCell>
+        <mxCell id="PR_02" parent="PR_01" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="- patientId: int&#10;- recordType: String&#10;- measurementValue: double&#10;- timestamp: long" vertex="1">
+          <mxGeometry height="70" width="220" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="PR_03" parent="PR_01" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="220" y="96" as="geometry" />
+        </mxCell>
+        <mxCell id="PR_04" parent="PR_01" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ getTimestamp(): long&#10;+ getPatientId(): int" vertex="1">
+          <mxGeometry height="40" width="220" y="104" as="geometry" />
+        </mxCell>
+
+        <mxCell id="DR_01" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="DataRetriever" vertex="1">
+          <mxGeometry height="110" width="260" x="455" y="-320" as="geometry" />
+        </mxCell>
+        <mxCell id="DR_02" parent="DR_01" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="- storage: DataStorage" vertex="1">
+          <mxGeometry height="26" width="260" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="DR_03" parent="DR_01" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="260" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="DR_04" parent="DR_01" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ queryPatientHistory(userId: String, patientId: int): List" vertex="1">
+          <mxGeometry height="44" width="260" y="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="AC_01" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="AccessController" vertex="1">
+          <mxGeometry height="110" width="240" x="820" y="-530" as="geometry" />
+        </mxCell>
+        <mxCell id="AC_02" parent="AC_01" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="- userPermissions: Map&lt;String, String&gt;" vertex="1">
+          <mxGeometry height="26" width="240" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="AC_03" parent="AC_01" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="240" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="AC_04" parent="AC_01" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ isAuthorized(userId: String): boolean" vertex="1">
+          <mxGeometry height="44" width="240" y="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="RM_01" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="RetentionManager" vertex="1">
+          <mxGeometry height="110" width="240" x="465" y="-740" as="geometry" />
+        </mxCell>
+        <mxCell id="RM_02" parent="RM_01" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="- retentionDays: int" vertex="1">
+          <mxGeometry height="26" width="240" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="RM_03" parent="RM_01" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="240" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="RM_04" parent="RM_01" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ cleanOldData(storage: Map): void" vertex="1">
+          <mxGeometry height="44" width="240" y="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="CN_01" edge="1" parent="1" source="DS_01" target="PR_01" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;">
+          <mxGeometry relative="1" width="160" />
+        </mxCell>
+        <mxCell id="CN_02" edge="1" parent="1" source="DS_01" target="AC_01" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;">
+          <mxGeometry relative="1" width="160" />
+        </mxCell>
+        <mxCell id="CN_03" edge="1" parent="1" source="DS_01" target="RM_01" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;">
+          <mxGeometry relative="1" width="160" />
+        </mxCell>
+        <mxCell id="CN_04" edge="1" parent="1" source="DR_01" target="DS_01" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;">
+          <mxGeometry relative="1" width="160" />
+        </mxCell>
+
+        <mxCell id="DESC_01" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="The Data Storage System handles the secure persistence and lifecycle management of clinical data within the CHMS. Incoming records are structured as PatientRecord entities and stored inside DataStorage. To fulfill safety requirements, the DataStorage class delegates responsibility to the AccessController for credential checking and authorization before any historical data retrieval is permitted. Furthermore, a RetentionManager runs periodically to enforce data deletion policies, cleaning up data older than the specified retention window to optimize performance and comply with storage policies. Medical staff interact via the DataRetriever proxy layer to execute secure queries." vertex="1">
+          <mxGeometry height="80" width="700" x="235" y="-160" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

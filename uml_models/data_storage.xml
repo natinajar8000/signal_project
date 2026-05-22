@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4 Safari/605.1.15">
+  <diagram id="Step_5_-_Data_Storage_System" name="Step 5 - Data Storage System">
+    <mxGraphModel dx="1245" dy="1559" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <mxCell id="DS_01" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="DataStorage" vertex="1">
+          <mxGeometry height="160" width="320" x="425" y="-550" as="geometry" />
+        </mxCell>
+        <mxCell id="DS_02" parent="DS_01" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="- instance: DataStorage&#10;- patientMap: Map&lt;Integer, Patient&gt;" vertex="1">
+          <mxGeometry height="40" width="320" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="DS_03" parent="DS_01" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="320" y="66" as="geometry" />
+        </mxCell>
+        <mxCell id="DS_04" parent="DS_01" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ getInstance(): DataStorage&#10;+ addPatientData(patientId: int, val: double, type: String, ts: long): void&#10;+ getRecords(patientId: int, startTime: long, endTime: long): List&lt;PatientRecord&gt;&#10;+ getAllPatients(): List&lt;Patient&gt;" vertex="1">
+          <mxGeometry height="80" width="320" y="74" as="geometry" />
+        </mxCell>
+
+        <mxCell id="PA_01" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="Patient" vertex="1">
+          <mxGeometry height="130" width="280" x="80" y="-535" as="geometry" />
+        </mxCell>
+        <mxCell id="PA_02" parent="PA_01" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="- patientId: int&#10;- patientRecords: List&lt;PatientRecord&gt;" vertex="1">
+          <mxGeometry height="40" width="280" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="PA_03" parent="PA_01" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="280" y="66" as="geometry" />
+        </mxCell>
+        <mxCell id="PA_04" parent="PA_01" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ getPatientId(): int&#10;+ addRecord(val: double, type: String, ts: long): void&#10;+ getRecords(startTime: long, endTime: long): List&lt;PatientRecord&gt;" vertex="1">
+          <mxGeometry height="50" width="280" y="74" as="geometry" />
+        </mxCell>
+
+        <mxCell id="PR_01" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="PatientRecord" vertex="1">
+          <mxGeometry height="150" width="220" x="110" y="-320" as="geometry" />
+        </mxCell>
+        <mxCell id="PR_02" parent="PR_01" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="- patientId: int&#10;- recordType: String&#10;- measurementValue: double&#10;- timestamp: long" vertex="1">
+          <mxGeometry height="70" width="220" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="PR_03" parent="PR_01" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="220" y="96" as="geometry" />
+        </mxCell>
+        <mxCell id="PR_04" parent="PR_01" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ getPatientId(): int&#10;+ getMeasurementValue(): double&#10;+ getTimestamp(): long&#10;+ getRecordType(): String" vertex="1">
+          <mxGeometry height="40" width="220" y="104" as="geometry" />
+        </mxCell>
+
+        <mxCell id="DR_01" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="DataRetriever" vertex="1">
+          <mxGeometry height="110" width="280" x="445" y="-300" as="geometry" />
+        </mxCell>
+        <mxCell id="DR_02" parent="DR_01" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="- storage: DataStorage
