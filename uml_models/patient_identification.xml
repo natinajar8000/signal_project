@@ -1,0 +1,146 @@
+<mxfile host="app.diagrams.net" agent="ChatGPT">
+  <diagram id="Step_3_-_Patient_Identification_System" name="Step 3 - Patient Identification System">
+    <mxGraphModel dx="983" dy="578" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="e1" edge="1" parent="1" source="Jrw7hQ_IT_yxvlkLg96b-26" style="startArrow=diamondThin;startFill=1;endArrow=none;html=1;rounded=0;entryX=-0.009;entryY=0.086;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.995;exitY=0.964;exitDx=0;exitDy=0;exitPerimeter=0;" target="Jrw7hQ_IT_yxvlkLg96b-20" value="1 controls">
+          <mxGeometry relative="1" x="0.015" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="371" y="120" as="sourcePoint" />
+            <mxPoint x="420" y="124.26666666666665" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="Jrw7hQ_IT_yxvlkLg96b-28" style="startArrow=diamondThin;startFill=0;endArrow=none;html=1;rounded=0;exitX=0.472;exitY=0.994;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.541;entryY=-0.018;entryDx=0;entryDy=0;entryPerimeter=0;" target="Jrw7hQ_IT_yxvlkLg96b-21" value="0..* logs">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="200.90909090909076" y="220.0000000000001" as="sourcePoint" />
+            <mxPoint x="198.18181818181802" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="Jrw7hQ_IT_yxvlkLg96b-20" style="endArrow=open;html=1;rounded=0;exitX=1.008;exitY=0.104;exitDx=0;exitDy=0;exitPerimeter=0;entryX=-0.001;entryY=0.632;entryDx=0;entryDy=0;entryPerimeter=0;" target="Jrw7hQ_IT_yxvlkLg96b-14" value="0..* matches ID to">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="740" y="124.26666666666677" as="sourcePoint" />
+            <mxPoint x="800" y="125.86666666666679" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="Jrw7hQ_IT_yxvlkLg96b-25" style="endArrow=open;html=1;rounded=0;" target="Jrw7hQ_IT_yxvlkLg96b-4" value="verifies">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="271.0160000000001" y="220.0000000000001" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="Jrw7hQ_IT_yxvlkLg96b-9" style="startArrow=diamondThin;startFill=1;endArrow=none;html=1;rounded=0;exitX=0.854;exitY=-0.018;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.701;entryY=1.039;entryDx=0;entryDy=0;entryPerimeter=0;" target="Jrw7hQ_IT_yxvlkLg96b-8" value="0..* stores">
+          <mxGeometry relative="1" x="0.0105" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="810" y="385" as="sourcePoint" />
+            <mxPoint x="860" y="385" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="Jrw7hQ_IT_yxvlkLg96b-6" style="startArrow=diamondThin;startFill=1;endArrow=none;html=1;rounded=0;entryX=1.014;entryY=0.288;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryPerimeter=0;" target="Jrw7hQ_IT_yxvlkLg96b-2" value="0..* contains">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="888.4276035518144" y="470" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="Jrw7hQ_IT_yxvlkLg96b-4" style="endArrow=open;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.287;entryY=0.002;entryDx=0;entryDy=0;entryPerimeter=0;" target="Jrw7hQ_IT_yxvlkLg96b-13" value="patientId links to hospitalId">
+          <mxGeometry relative="1" x="0.0012" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="693" y="570" as="sourcePoint" />
+            <mxPoint x="887" y="220.0000000000001" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="Jrw7hQ_IT_yxvlkLg96b-28" style="endArrow=open;html=1;rounded=0;entryX=0;entryY=0.08;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="Jrw7hQ_IT_yxvlkLg96b-9" value="allows storage after valid match">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="370" y="214.62088265568707" as="sourcePoint" />
+            <mxPoint x="446.17647058823513" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Jrw7hQ_IT_yxvlkLg96b-1" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="PatientRecord" vertex="1">
+          <mxGeometry height="170" width="240" x="80" y="36" as="geometry" />
+        </mxCell>
+        <mxCell id="Jrw7hQ_IT_yxvlkLg96b-2" parent="Jrw7hQ_IT_yxvlkLg96b-1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;span style=&quot;font-weight: 700; text-align: center;&quot;&gt;-&lt;/span&gt;&lt;span style=&quot;text-align: center;&quot;&gt; patientId: int&lt;/span&gt;&lt;br style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;text-align: center;&quot;&gt;- recordType: String&lt;/span&gt;&lt;br style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;text-align: center;&quot;&gt;- measurementValue: double&lt;/span&gt;&lt;br style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;text-align: center;&quot;&gt;- timestamp: long&lt;/span&gt;" vertex="1">
+          <mxGeometry height="64" width="240" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="Jrw7hQ_IT_yxvlkLg96b-3" parent="Jrw7hQ_IT_yxvlkLg96b-1" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="240" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="Jrw7hQ_IT_yxvlkLg96b-4" parent="Jrw7hQ_IT_yxvlkLg96b-1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;span style=&quot;text-align: center;&quot;&gt;+ getPatientId(): int&lt;/span&gt;&lt;br style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;text-align: center;&quot;&gt;+ getRecordType(): String&lt;/span&gt;&lt;br style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;text-align: center;&quot;&gt;+ getMeasurementValue(): double&lt;/span&gt;&lt;br style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;text-align: center;&quot;&gt;+ getTimestamp(): long&lt;/span&gt;" vertex="1">
+          <mxGeometry height="72" width="240" y="98" as="geometry" />
+        </mxCell>
+        <mxCell id="Jrw7hQ_IT_yxvlkLg96b-5" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="Patient" vertex="1">
+          <mxGeometry height="150" width="290" x="820" y="36" as="geometry" />
+        </mxCell>
+        <mxCell id="Jrw7hQ_IT_yxvlkLg96b-6" parent="Jrw7hQ_IT_yxvlkLg96b-5" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;span style=&quot;text-align: center;&quot;&gt;- patientId: int&lt;/span&gt;&lt;br style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;text-align: center;&quot;&gt;- patientRecords: Lis&lt;/span&gt;&lt;span style=&quot;font-weight: 700; text-align: center;&quot;&gt;t&lt;/span&gt;" vertex="1">
+          <mxGeometry height="44" width="290" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="Jrw7hQ_IT_yxvlkLg96b-7" parent="Jrw7hQ_IT_yxvlkLg96b-5" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="290" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="Jrw7hQ_IT_yxvlkLg96b-8" parent="Jrw7hQ_IT_yxvlkLg96b-5" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;span style=&quot;text-align: center;&quot;&gt;+ getPatientId(): int&lt;/span&gt;&lt;br style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;text-align: center;&quot;&gt;+ addRecord(measurementValue: double, recordType: String, timestamp: long): void&lt;/span&gt;&lt;br style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;text-align: center;&quot;&gt;+ getRecords(startTime: long, endTime: long): List&lt;/span&gt;" vertex="1">
+          <mxGeometry height="72" width="290" y="78" as="geometry" />
+        </mxCell>
+        <mxCell id="Jrw7hQ_IT_yxvlkLg96b-9" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="DataStorage" vertex="1">
+          <mxGeometry height="188" width="280" x="780" y="515" as="geometry" />
+        </mxCell>
+        <mxCell id="Jrw7hQ_IT_yxvlkLg96b-10" parent="Jrw7hQ_IT_yxvlkLg96b-9" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;span style=&quot;text-align: center;&quot;&gt;- dataStorage: DataStorage&lt;/span&gt;&lt;br style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;text-align: center;&quot;&gt;- patientMap: Map&lt;/span&gt;" vertex="1">
+          <mxGeometry height="44" width="280" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="Jrw7hQ_IT_yxvlkLg96b-11" parent="Jrw7hQ_IT_yxvlkLg96b-9" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="280" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="Jrw7hQ_IT_yxvlkLg96b-12" parent="Jrw7hQ_IT_yxvlkLg96b-9" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;span style=&quot;text-align: center;&quot;&gt;+ getInstance(): DataStorage&lt;/span&gt;&lt;br style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;text-align: center;&quot;&gt;+ addPatientData(patientId: int, measurementValue: double, recordType: String, timestamp: long): void&lt;/span&gt;&lt;br style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;text-align: center;&quot;&gt;+ getRecords(patientId: int, startTime: long, endTime: long): List&lt;/span&gt;&lt;br style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;text-align: center;&quot;&gt;+ getAllPatients(): List&lt;/span&gt;" vertex="1">
+          <mxGeometry height="110" width="280" y="78" as="geometry" />
+        </mxCell>
+        <mxCell id="Jrw7hQ_IT_yxvlkLg96b-13" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="HospitalPatient" vertex="1">
+          <mxGeometry height="148" width="250" x="730" y="294" as="geometry" />
+        </mxCell>
+        <mxCell id="Jrw7hQ_IT_yxvlkLg96b-14" parent="Jrw7hQ_IT_yxvlkLg96b-13" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;span style=&quot;text-align: center;&quot;&gt;- hospitalId: int&lt;/span&gt;&lt;br style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;text-align: center;&quot;&gt;- fullName: String&lt;/span&gt;&lt;br style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;text-align: center;&quot;&gt;- dateOfBirth: String&lt;/span&gt;&lt;br style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;text-align: center;&quot;&gt;- medicalHistorySummary: String&lt;/span&gt;" vertex="1">
+          <mxGeometry height="64" width="250" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="Jrw7hQ_IT_yxvlkLg96b-15" parent="Jrw7hQ_IT_yxvlkLg96b-13" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="250" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="Jrw7hQ_IT_yxvlkLg96b-16" parent="Jrw7hQ_IT_yxvlkLg96b-13" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;span style=&quot;text-align: center;&quot;&gt;+ getHospitalId(): int&lt;/span&gt;&lt;br style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;text-align: center;&quot;&gt;+ getFullName(): String&lt;/span&gt;&lt;br style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;text-align: center;&quot;&gt;+ getMedicalHistorySummary(): String&lt;/span&gt;" vertex="1">
+          <mxGeometry height="50" width="250" y="98" as="geometry" />
+        </mxCell>
+        <mxCell id="Jrw7hQ_IT_yxvlkLg96b-17" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="PatientIdentifier" vertex="1">
+          <mxGeometry height="120" width="270" x="350" y="294" as="geometry" />
+        </mxCell>
+        <mxCell id="Jrw7hQ_IT_yxvlkLg96b-18" parent="Jrw7hQ_IT_yxvlkLg96b-17" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="- hospitalPatients: Map" vertex="1">
+          <mxGeometry height="26" width="270" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="Jrw7hQ_IT_yxvlkLg96b-19" parent="Jrw7hQ_IT_yxvlkLg96b-17" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="270" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="Jrw7hQ_IT_yxvlkLg96b-20" parent="Jrw7hQ_IT_yxvlkLg96b-17" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;span style=&quot;text-align: center;&quot;&gt;+ matchPatient(patientId: int): HospitalPatient&lt;/span&gt;&lt;br style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;text-align: center;&quot;&gt;+ exists(patientId: int): boolean&lt;/span&gt;&lt;br style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;text-align: center;&quot;&gt;+ registerPatient(patient: HospitalPatient): void&lt;/span&gt;" vertex="1">
+          <mxGeometry height="60" width="270" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Jrw7hQ_IT_yxvlkLg96b-21" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="IdentityMismatch" vertex="1">
+          <mxGeometry height="138" width="190" x="40" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="Jrw7hQ_IT_yxvlkLg96b-22" parent="Jrw7hQ_IT_yxvlkLg96b-21" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="- patientId: int&lt;div&gt;- timestamp: long&lt;/div&gt;&lt;div&gt;- reason: String&lt;/div&gt;" vertex="1">
+          <mxGeometry height="54" width="190" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="Jrw7hQ_IT_yxvlkLg96b-23" parent="Jrw7hQ_IT_yxvlkLg96b-21" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="190" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Jrw7hQ_IT_yxvlkLg96b-24" parent="Jrw7hQ_IT_yxvlkLg96b-21" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ getPatient(): int&lt;div&gt;+ getReason(): String&lt;/div&gt;" vertex="1">
+          <mxGeometry height="50" width="190" y="88" as="geometry" />
+        </mxCell>
+        <mxCell id="Jrw7hQ_IT_yxvlkLg96b-25" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="IdentityManager" vertex="1">
+          <mxGeometry height="168" width="270" x="20" y="294" as="geometry" />
+        </mxCell>
+        <mxCell id="Jrw7hQ_IT_yxvlkLg96b-26" parent="Jrw7hQ_IT_yxvlkLg96b-25" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;span style=&quot;text-align: center;&quot;&gt;- patientIdentifier: PatientIdentifier&lt;/span&gt;&lt;br style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;text-align: center;&quot;&gt;- mismatchLog: List&lt;/span&gt;" vertex="1">
+          <mxGeometry height="44" width="270" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="Jrw7hQ_IT_yxvlkLg96b-27" parent="Jrw7hQ_IT_yxvlkLg96b-25" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="270" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="Jrw7hQ_IT_yxvlkLg96b-28" parent="Jrw7hQ_IT_yxvlkLg96b-25" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;span style=&quot;text-align: center;&quot;&gt;+ verifyIncomingRecord(record: PatientRecord): HospitalPatient&lt;/span&gt;&lt;br style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;text-align: center;&quot;&gt;+ handleMismatch(record: PatientRecord, reason: String): void&lt;/span&gt;&lt;br style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;text-align: center;&quot;&gt;+ getMismatchLog(): List&lt;/span&gt;" vertex="1">
+          <mxGeometry height="90" width="270" y="78" as="geometry" />
+        </mxCell>
+        <mxCell id="Jrw7hQ_IT_yxvlkLg96b-33" parent="1" style="text;whiteSpace=wrap;html=1;" value="&lt;p data-start=&quot;0&quot; data-end=&quot;517&quot;&gt;The Patient Identification layer is used to connect incoming medical data to the correct patient in the CHMS. In the current implementation, the main working classes are &lt;code data-start=&quot;170&quot; data-end=&quot;185&quot; style=&quot;font-family: Helvetica;&quot;&gt;PatientRecord&lt;/code&gt;, &lt;code data-start=&quot;187&quot; data-end=&quot;196&quot; style=&quot;font-family: Helvetica;&quot;&gt;Patient&lt;/code&gt;, and &lt;code data-start=&quot;202&quot; data-end=&quot;215&quot; style=&quot;font-family: Helvetica;&quot;&gt;DataStorage&lt;/code&gt;. A &lt;code data-start=&quot;219&quot; data-end=&quot;234&quot; style=&quot;font-family: Helvetica;&quot;&gt;PatientRecord&lt;/code&gt; stores the measurement details, such as the patient ID, record type, measurement value, and timestamp. The &lt;code data-start=&quot;342&quot; data-end=&quot;351&quot; style=&quot;font-family: Helvetica;&quot;&gt;Patient&lt;/code&gt; class represents one patient and contains a list of that patient’s records. &lt;code data-start=&quot;428&quot; data-end=&quot;441&quot; style=&quot;font-family: Helvetica;&quot;&gt;DataStorage&lt;/code&gt; is responsible for storing patient data and retrieving records when needed.&amp;nbsp;&lt;span style=&quot;font-family: Helvetica; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;The diagram also shows extra identity-related classes: &lt;/span&gt;&lt;code data-start=&quot;574&quot; data-end=&quot;593&quot; style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;font face=&quot;Helvetica&quot;&gt;PatientIdentifier&lt;/font&gt;&lt;/code&gt;&lt;span style=&quot;font-family: Helvetica; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;, &lt;/span&gt;&lt;code data-start=&quot;595&quot; data-end=&quot;613&quot; style=&quot;font-family: Helvetica; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;IdentityMismatch&lt;/code&gt;&lt;span style=&quot;font-family: Helvetica; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;, and &lt;/span&gt;&lt;code data-start=&quot;619&quot; data-end=&quot;636&quot; style=&quot;font-family: Helvetica; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;IdentityManager&lt;/code&gt;&lt;span style=&quot;font-family: Helvetica; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;. These are &lt;/span&gt;&lt;span data-start=&quot;648&quot; data-end=&quot;704&quot; style=&quot;font-family: Helvetica; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;not actually implemented by us in the current system&lt;/span&gt;&lt;span style=&quot;font-family: Helvetica; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;, but they are included as possible future improvements. In the future, &lt;/span&gt;&lt;code data-start=&quot;776&quot; data-end=&quot;795&quot; style=&quot;font-family: Helvetica; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;PatientIdentifier&lt;/code&gt;&lt;span style=&quot;font-family: Helvetica; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt; could be used to match the system’s &lt;/span&gt;&lt;code data-start=&quot;832&quot; data-end=&quot;843&quot; style=&quot;font-family: Helvetica; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;patientId&lt;/code&gt;&lt;span style=&quot;font-family: Helvetica; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt; with a real hospital patient ID. &lt;/span&gt;&lt;code data-start=&quot;877&quot; data-end=&quot;894&quot; style=&quot;font-family: Helvetica; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;IdentityManager&lt;/code&gt;&lt;span style=&quot;font-family: Helvetica; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt; could verify incoming records before they are stored, and &lt;/span&gt;&lt;code data-start=&quot;953&quot; data-end=&quot;971&quot; style=&quot;font-family: Helvetica; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;IdentityMismatch&lt;/code&gt;&lt;span style=&quot;font-family: Helvetica; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt; could log cases where a patient ID does not match correctly.&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-family: Helvetica; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;This future design would make the system safer and more realistic, because data would only be stored after a valid patient match. However, for now, our implementation mainly focuses on storing and retrieving patient records using &lt;/span&gt;&lt;code data-start=&quot;1264&quot; data-end=&quot;1273&quot; style=&quot;font-family: Helvetica; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Patient&lt;/code&gt;&lt;span style=&quot;font-family: Helvetica; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;, &lt;/span&gt;&lt;code data-start=&quot;1275&quot; data-end=&quot;1290&quot; style=&quot;font-family: Helvetica; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;PatientRecord&lt;/code&gt;&lt;span style=&quot;font-family: Helvetica; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;, and &lt;/span&gt;&lt;code data-start=&quot;1296&quot; data-end=&quot;1309&quot; style=&quot;font-family: Helvetica; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;font face=&quot;Helvetica&quot;&gt;DataStorage&lt;/font&gt;&lt;/code&gt;&lt;span style=&quot;font-family: Helvetica; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;.&lt;/span&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="210" width="470" x="240" y="530" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
